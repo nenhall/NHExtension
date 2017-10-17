@@ -1,13 +1,13 @@
 //
 //  NSData+Cache.m
-//  BaiKeMiJiaLive
+//  NHExtension
 //
-//  Created by NegHao.W on 16/12/24.
-//  Copyright © 2016年 facebac.com. All rights reserved.
+//  Created by neghao on 16/12/24.
+//  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
 #import "NSData+Cache.h"
-#import "NSString+BKExtension.h"
+#import "NSString+NHExtension.h"
 
 @implementation NSData (Cache)
 

@@ -1,9 +1,9 @@
 //
 //  UIButton+ImageTitleStyle.m
-//  BaiKeMiJiaLive
+//  NHExtension
 //
 //  Created by neghao on 2017/7/18.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import "UIButton+ImageTitleStyle.h"

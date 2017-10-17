@@ -1,9 +1,9 @@
 //
 //  NSObject+getCurrentVC.m
-//  BaiKeMiJiaLive
+//  NHExtension
 //
 //  Created by neghao on 2017/6/22.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import "NSObject+getCurrentVC.h"

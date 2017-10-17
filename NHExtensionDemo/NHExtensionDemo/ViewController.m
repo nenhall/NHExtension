@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "NSDate+switchDate.h"
+#import <NHFoundation.h>
+#import <NHUIKit.h>
 
 @interface ViewController ()
 
@@ -18,15 +19,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [NSDate getCurrentDateBaseStyleWithData:nil];
     
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 
 @end

@@ -1,9 +1,9 @@
 //
 //  UINavigationController+PushAnimation.m
-//  BaiKeMiJiaLive
+//  NHExtension
 //
 //  Created by neghao on 2017/8/1.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import "UINavigationController+PushAnimation.h"

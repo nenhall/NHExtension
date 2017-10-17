@@ -1,8 +1,8 @@
 //
 //  NSObject+runtime.h
-//  BaiKeMiJiaLive
+//  NHExtension
 //
-//  Created by NegHao on 2016/10/13.
+//  Created by neghao on 2016/10/13.
 //  Copyright © 2016年 facebac. All rights reserved.
 //
 

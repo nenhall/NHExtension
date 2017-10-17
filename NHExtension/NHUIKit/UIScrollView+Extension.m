@@ -1,9 +1,9 @@
 //
 //  UIScrollView+Extension.m
-//  BaiKeMiJiaLive
+//  NHExtension
 //
-//  Created by NegHao on 2016/12/28.
-//  Copyright © 2016年 facebac.com. All rights reserved.
+//  Created by neghao on 2016/12/28.
+//  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
 #import "UIScrollView+Extension.h"

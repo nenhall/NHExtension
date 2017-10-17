@@ -1,15 +1,15 @@
 //
 //  UINavigationItem+BarItem.m
-//  BaiKeMiJiaLive
+//  NHExtension
 //
 //  Created by neghao on 2017/6/30.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import "UINavigationItem+BarItem.h"
 #import "UINavigationItem_BarItemAction.h"
 #import <objc/message.h>
-#import "NSString+BKExtension.h"
+#import "NSString+NHExtension.h"
 
 
 @implementation UINavigationItem (BarItem)

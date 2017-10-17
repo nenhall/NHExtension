@@ -2,8 +2,8 @@
 //  NSTimer+AutoRetain.m
 //  BaiKeTheVoice
 //
-//  Created by NegHao on 2017/1/8.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Created by neghao on 2017/1/8.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import "NSTimer+AutoRetain.h"

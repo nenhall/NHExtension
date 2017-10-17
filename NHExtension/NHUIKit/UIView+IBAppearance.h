@@ -1,9 +1,9 @@
 //
 //  UIView+IB_DESIGNABLE.h
-//  BaiKeMiJiaLive
+//  NHExtension
 //
-//  Created by NegHao on 2017/1/13.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Created by neghao on 2017/1/13.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

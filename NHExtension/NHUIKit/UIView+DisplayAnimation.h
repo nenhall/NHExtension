@@ -1,9 +1,9 @@
 //
 //  UIView+DisplayAnimation.h
-//  BaiKeMiJiaLive
+//  NHExtension
 //
-//  Created by NegHao.W on 17/1/4.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Created by neghao on 17/1/4.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

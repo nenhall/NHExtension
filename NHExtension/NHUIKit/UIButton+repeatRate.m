@@ -1,9 +1,9 @@
 //
-//  UIButton+BKExtension.m
-//  BaiKeMiJiaLive
+//  UIButton+NHExtension.m
+//  NHExtension
 //
-//  Created by NegHao on 2016/11/24.
-//  Copyright © 2016年 facebac.com. All rights reserved.
+//  Created by neghao on 2016/11/24.
+//  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
 #import "UIButton+repeatRate.h"

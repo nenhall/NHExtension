@@ -1,9 +1,9 @@
 //
 //  UILabel+VerticalAlignment.h
-//  BaiKeMiJiaLive
+//  NHExtension
 //
 //  Created by neghao on 2017/8/24.
-//  Copyright © 2017年 facebac.com. All rights reserved.
+//  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
