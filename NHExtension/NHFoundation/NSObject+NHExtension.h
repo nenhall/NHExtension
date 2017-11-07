@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+//#pragma clang diagnostic ignored "-Wdocumentation"
 
 @interface NSObject (NHExtension)
 

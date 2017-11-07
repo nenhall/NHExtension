@@ -169,10 +169,10 @@
 		692EA96B13E2CBB4DFB7A9CCE639307F /* UIBarButtonItem+NHItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+NHItem.h"; sourceTree = "<group>"; };
 		6B10D2D5CCB8F3933929152211893C1B /* NHUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NHUIKit.h; path = NHExtension/NHUIKit.h; sourceTree = "<group>"; };
 		6E5F89E3FD711EC2A0C2B026AD1F630C /* Pods-NHExtensionDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NHExtensionDemo-resources.sh"; sourceTree = "<group>"; };
-		7322DF9BBB98EB7939E800FF8F061B97 /* libNHHUDExtend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libNHHUDExtend.a; path = libNHHUDExtend.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7322DF9BBB98EB7939E800FF8F061B97 /* libNHHUDExtend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNHHUDExtend.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		73CDEE42AF0F09D522E40DF3FF943861 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		73D580C6C9DD11D09403C6BE4B2F4ADA /* UIViewController+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extension.m"; sourceTree = "<group>"; };
-		750BCA170708946FA6DA5AC491157152 /* libNHExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libNHExtension.a; path = libNHExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		750BCA170708946FA6DA5AC491157152 /* libNHExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNHExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78723247726F9086794653911FE8B35D /* MBProgressHUD+NHAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+NHAdd.h"; path = "NHHUDExtend/MBProgressHUD+NHAdd.h"; sourceTree = "<group>"; };
 		7BA8AFAF53DDEC86B4D432CE749FAD58 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		8151907EF7504D80FB2D752D130980BB /* UIView+MGBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+MGBadgeView.h"; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		8ADD9C64ECDF182C7DBAD32263EB2C79 /* Pods-NHExtensionDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NHExtensionDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		8B8C371C84AC554A6AE04A460566EB22 /* MBProgressHUD+NHAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD+NHAdd.m"; path = "NHHUDExtend/MBProgressHUD+NHAdd.m"; sourceTree = "<group>"; };
 		8D37A42991BA0372CD14C4A0AB21D4F9 /* NSDictionary+NHJSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NHJSON.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		956D3B62EAB818FAAE1D20DE8AC00587 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libMBProgressHUD.a; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		956D3B62EAB818FAAE1D20DE8AC00587 /* libMBProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMBProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E3163CC0F0E62328CF3DC65C9E62AF /* NHHUDExtend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NHHUDExtend-prefix.pch"; sourceTree = "<group>"; };
 		9A5AF05C52D5569AF7C05CE3C3693E02 /* NSObject+Log.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSObject+Log.h"; sourceTree = "<group>"; };
 		9C3AC24F863EEDDC43A75E13EAC80DCA /* UITextView+placeholder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UITextView+placeholder.m"; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 		BD733830EFB05DA6FC71685F056AE545 /* UINavigationController_pushAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = UINavigationController_pushAnimation.h; sourceTree = "<group>"; };
 		C029FBFF6B55ABF37C0E0F1973FC5400 /* UIImage+NHExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+NHExtension.h"; sourceTree = "<group>"; };
 		C0417BD6EE20F52257A07AD0077D133F /* UIScrollView+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
-		C0EA9887C1EC719F265FB2522235283B /* libPods-NHExtensionDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-NHExtensionDemo.a"; path = "libPods-NHExtensionDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0EA9887C1EC719F265FB2522235283B /* libPods-NHExtensionDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NHExtensionDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67D710D541CD5BBD808D177321627C7 /* UILabel+VerticalAlignment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UILabel+VerticalAlignment.m"; sourceTree = "<group>"; };
 		C899BB604017847F5FAA222E8FAF9193 /* MBProgressHUD_NHExtend.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD_NHExtend.h; path = NHHUDExtend/MBProgressHUD_NHExtend.h; sourceTree = "<group>"; };
 		CFA9BBB22F70751312700F5E95019AEA /* NSData+Cache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+Cache.m"; sourceTree = "<group>"; };
@@ -412,7 +412,6 @@
 				C899BB604017847F5FAA222E8FAF9193 /* MBProgressHUD_NHExtend.h */,
 				9E844A907598A0B8180453465A1CAA41 /* Support Files */,
 			);
-			name = NHHUDExtend;
 			path = NHHUDExtend;
 			sourceTree = "<group>";
 		};
@@ -488,7 +487,6 @@
 				01097796C6D409EA91A3E9AAD3C49164 /* MBProgressHUD.m */,
 				6A44EE1AB89A30466ACB16BCD0BF88CC /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -813,6 +811,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				WARNING_CFLAGS = "-Wno-documentation";
 			};
 			name = Release;
 		};
@@ -877,6 +876,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				WARNING_CFLAGS = "-Wno-documentation";
 			};
 			name = Debug;
 		};

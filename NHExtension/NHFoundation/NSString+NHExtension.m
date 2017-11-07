@@ -28,8 +28,9 @@
 
 - (NSString *)stringUpdataShowFormatWithNum:(int)num {
     //140000
-    if (num > 9999) {
-        NSMutableString *concerStr = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%d",num]];
+    int number = num;
+    if (number > 9999) {
+        NSMutableString *concerStr = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%d",number]];
         NSString *newStr = [concerStr substringWithRange:NSMakeRange(0, concerStr.length - 3)];
         concerStr = [newStr mutableCopy];
         
@@ -45,7 +46,7 @@
         [concerStr insertString:@"w" atIndex:concerStr.length];
         return [concerStr copy];
     }else{
-        return [NSString stringWithFormat:@"%d",num];
+        return [NSString stringWithFormat:@"%d",number];
     }
 }
 
@@ -235,10 +236,10 @@
 
 #pragma mark - 散列函数
 - (NSString *)md5String {
-    const char *str = self.UTF8String;
+    const char *cString = self.UTF8String;
     unsigned char buffer[CC_MD5_DIGEST_LENGTH];
     
-    CC_MD5(str, (CC_LONG)strlen(str), buffer);
+    CC_MD5(cString, (CC_LONG)strlen(cString), buffer);
     
     return [self stringFromBytes:buffer length:CC_MD5_DIGEST_LENGTH];
 }

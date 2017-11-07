@@ -39,6 +39,7 @@
     return NO;
 }
 
+
 + (BOOL)isEmptyArray:(NSArray *)array{
     if(array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0){
         return YES;
