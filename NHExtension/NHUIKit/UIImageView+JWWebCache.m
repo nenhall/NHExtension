@@ -83,7 +83,8 @@ static char imageURLKey;
 #pragma mark - 在目录创建文件
 + (void)createBaseDirectoryAtPath:(NSString *)path {
     __autoreleasing NSError *error = nil;
-    [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES
+    [[NSFileManager defaultManager] createDirectoryAtPath:path
+                              withIntermediateDirectories:YES
                                                attributes:nil error:&error];
     if (error) {
         DebugLog(@"create cache directory failed, error = %@", error);

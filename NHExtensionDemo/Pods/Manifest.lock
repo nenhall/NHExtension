@@ -1,12 +1,8 @@
 PODS:
-  - DZNEmptyDataSet (1.8.1)
   - MBProgressHUD (1.0.0)
-  - NHExtension (1.0.0):
-    - DZNEmptyDataSet
-    - SDAutoLayout (~> 2.1.3)
+  - NHExtension (1.0.0)
   - NHHUDExtend (1.0.1):
     - MBProgressHUD (~> 1.0.0)
-  - SDAutoLayout (2.1.9)
 
 DEPENDENCIES:
   - NHExtension (from `../NHExtension.podspec`)
@@ -17,11 +13,9 @@ EXTERNAL SOURCES:
     :path: ../NHExtension.podspec
 
 SPEC CHECKSUMS:
-  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  NHExtension: a28b2861178919d4cf4e81ff95576f91752316d6
+  NHExtension: e98a624f493b810c42fa844c353a57e82fcf4fa9
   NHHUDExtend: 10900daeabebbfb92367199398f56bea9bfc3e88
-  SDAutoLayout: 6b6f4db0d009dfc46cef14ef710dbb164e86616c
 
 PODFILE CHECKSUM: dd6c46326dfc6301de1f0de8558593ac223c0ecb
 

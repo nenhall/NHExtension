@@ -26,14 +26,14 @@ Pod::Spec.new do |s|
 
   s.source_files = 'NHExtension/**/*.{h,m}'
 
-  s.frameworks   = "UIKit", "Foundation"
+  s.frameworks   = "UIKit", "Foundation", "ImageIO"
 
   s.libraries    = "z"
 
   s.requires_arc = true
 
-  s.dependency "DZNEmptyDataSet"
-  s.dependency 'SDAutoLayout', '~> 2.1.3'
+ # s.dependency "DZNEmptyDataSet"
+ # s.dependency 'SDAutoLayout', '~> 2.1.3'
 
 
 

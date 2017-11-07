@@ -26,7 +26,7 @@
     return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
 }
 
-- (NSString *)stringUpdataShowFormatWithNum:(int)num{
+- (NSString *)stringUpdataShowFormatWithNum:(int)num {
     //140000
     if (num > 9999) {
         NSMutableString *concerStr = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%d",num]];

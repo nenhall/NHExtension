@@ -21,16 +21,9 @@
   "source_files": "NHExtension/**/*.{h,m}",
   "frameworks": [
     "UIKit",
-    "Foundation"
+    "Foundation",
+    "ImageIO"
   ],
   "libraries": "z",
-  "requires_arc": true,
-  "dependencies": {
-    "DZNEmptyDataSet": [
-
-    ],
-    "SDAutoLayout": [
-      "~> 2.1.3"
-    ]
-  }
+  "requires_arc": true
 }
