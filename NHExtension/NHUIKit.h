@@ -29,7 +29,6 @@
 #import "UIView+IBAppearance.h"
 #import "UIView+MGBadgeView.h"
 #import "UIView+NHExtension.h"
-#import "UIView+SDAutoLayout.h"
 #import "UIViewController+Extension.h"
 
 //#import "UITableView+SDAutoTableViewCellHeight.h"
