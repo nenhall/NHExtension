@@ -47,6 +47,11 @@
 		7642E002B59569BC9E6DF4DF40FE685B /* UIImageView+JWWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F7FAA1E90D16B69EAD1765E29556136 /* UIImageView+JWWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B4441C908004D861ABBAA10AECE1264 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3779674C63984D3BB970C284E0D1C97 /* Foundation.framework */; };
 		7EC09737B82CA1F3ADE8332509DF9430 /* NSString+NHExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 194228FA27537BF5B94B95E54EEB0794 /* NSString+NHExtension.m */; };
+		805DABFD20F747F700612477 /* testFileViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 805DABFB20F747A900612477 /* testFileViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		805DABFE20F7480200612477 /* testFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805DABFC20F747A900612477 /* testFileViewController.m */; };
+		805DAC0120F74BBD00612477 /* UIDevice+info.h in Headers */ = {isa = PBXBuildFile; fileRef = 805DABFF20F74BBD00612477 /* UIDevice+info.h */; };
+		805DAC0220F74BBD00612477 /* UIDevice+info.m in Sources */ = {isa = PBXBuildFile; fileRef = 805DAC0020F74BBD00612477 /* UIDevice+info.m */; };
+		805DAC0820F75B0100612477 /* NHINLINE.h in Headers */ = {isa = PBXBuildFile; fileRef = 805DAC0720F75AFB00612477 /* NHINLINE.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		808577AB530B56733F90BAEBF1C92431 /* NHExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E444D2B74C5F430597D3A75B8D6994C /* NHExtension-dummy.m */; };
 		8CE8846A04BC77EEA6F50F59ED514CC9 /* NSData+Cache.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA9BBB22F70751312700F5E95019AEA /* NSData+Cache.m */; };
 		8D0719566840D040345A4A8F81A39471 /* UITabBarController+pushBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 1296FBD70010EF11F0695B0F8BA36D41 /* UITabBarController+pushBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -175,6 +180,12 @@
 		750BCA170708946FA6DA5AC491157152 /* libNHExtension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNHExtension.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		78723247726F9086794653911FE8B35D /* MBProgressHUD+NHAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD+NHAdd.h"; path = "NHHUDExtend/MBProgressHUD+NHAdd.h"; sourceTree = "<group>"; };
 		7BA8AFAF53DDEC86B4D432CE749FAD58 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
+		805DABFA20F7422E00612477 /* NHMacroDefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NHMacroDefineHeader.h; sourceTree = "<group>"; };
+		805DABFB20F747A900612477 /* testFileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testFileViewController.h; sourceTree = "<group>"; };
+		805DABFC20F747A900612477 /* testFileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testFileViewController.m; sourceTree = "<group>"; };
+		805DABFF20F74BBD00612477 /* UIDevice+info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIDevice+info.h"; sourceTree = "<group>"; };
+		805DAC0020F74BBD00612477 /* UIDevice+info.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+info.m"; sourceTree = "<group>"; };
+		805DAC0720F75AFB00612477 /* NHINLINE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NHINLINE.h; sourceTree = "<group>"; };
 		8151907EF7504D80FB2D752D130980BB /* UIView+MGBadgeView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+MGBadgeView.h"; sourceTree = "<group>"; };
 		84B8E0B549F31739B487C87F3E06F647 /* UIImageView+NHExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+NHExtension.m"; sourceTree = "<group>"; };
 		852303B57B64418032E8DC8AA0355995 /* UIButton+repeatRate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIButton+repeatRate.h"; sourceTree = "<group>"; };
@@ -387,6 +398,12 @@
 				2B45DA7B729DCA5CF548B612703DE32A /* UIView+NHExtension.m */,
 				508974686A3DC91E45F7A12003D90AFF /* UIViewController+Extension.h */,
 				73D580C6C9DD11D09403C6BE4B2F4ADA /* UIViewController+Extension.m */,
+				805DABFF20F74BBD00612477 /* UIDevice+info.h */,
+				805DAC0020F74BBD00612477 /* UIDevice+info.m */,
+				805DAC0720F75AFB00612477 /* NHINLINE.h */,
+				805DABFA20F7422E00612477 /* NHMacroDefineHeader.h */,
+				805DABFB20F747A900612477 /* testFileViewController.h */,
+				805DABFC20F747A900612477 /* testFileViewController.m */,
 			);
 			name = NHUIKit;
 			path = NHExtension/NHUIKit;
@@ -500,6 +517,7 @@
 				6837384A939C13DA6B061F51A765AC3C /* GTMDefines.h in Headers */,
 				AE11A241BBA531619708783F520DBC26 /* GTMNSData+zlib.h in Headers */,
 				BB21029CCC99FF44FAF9500042E3D870 /* NHFoundation.h in Headers */,
+				805DAC0120F74BBD00612477 /* UIDevice+info.h in Headers */,
 				BB7DA4C07F4E291C674A9C74EE4DBC43 /* NHUIKit.h in Headers */,
 				A36CF677D2A4623A3CB810C77AA111F2 /* NSData+Cache.h in Headers */,
 				66891B9AD448DD3BC7779042E59FB091 /* NSDate+switchDate.h in Headers */,
@@ -517,6 +535,7 @@
 				1280EF680D4E6313B4F2EA6395019D83 /* UIImage+NHExtension.h in Headers */,
 				24E53ACCBB6CFEAF7C64C764BBC564B0 /* UIImageView+CornerRadius.h in Headers */,
 				7642E002B59569BC9E6DF4DF40FE685B /* UIImageView+JWWebCache.h in Headers */,
+				805DAC0820F75B0100612477 /* NHINLINE.h in Headers */,
 				118A94A983BDC938877BEEDF612BBAE6 /* UIImageView+NHExtension.h in Headers */,
 				19CBCEAE9F9E4432CE8139CA6A969018 /* UILabel+NHAttributeTextTapAction.h in Headers */,
 				0A1BE622407AC2972CB54CC2A0D7915A /* UILabel+VerticalAlignment.h in Headers */,
@@ -530,6 +549,7 @@
 				B0320919A732CA28C0492AB4E4E82564 /* UIView+DisplayAnimation.h in Headers */,
 				2211DA8B4D66014DF6F0B6E0CFB8F848 /* UIView+IBAppearance.h in Headers */,
 				D7A18D2055FC20744F40518ED1E8DC23 /* UIView+MGBadgeView.h in Headers */,
+				805DABFD20F747F700612477 /* testFileViewController.h in Headers */,
 				A7BA829F35213CF218BB841C9E4F2F4E /* UIView+NHExtension.h in Headers */,
 				4D9F9AF31BB67CEA61B5EA541F156B82 /* UIViewController+Extension.h in Headers */,
 			);
@@ -699,11 +719,13 @@
 				D6A62BDCA2056939B9777D0FF1CE003E /* NSTimer+AutoRetain.m in Sources */,
 				A4839458249F9D530E825E74D30E3138 /* UIBarButtonItem+NHItem.m in Sources */,
 				C46862D474709993CB4F54F173856D71 /* UIButton+ImageTitleStyle.m in Sources */,
+				805DAC0220F74BBD00612477 /* UIDevice+info.m in Sources */,
 				FBE6D7B2E59C0EBA4CA18327558A82EB /* UIButton+repeatRate.m in Sources */,
 				E179D434FE3AD69B8D0CC77EF4005F0B /* UIColor+NHExtension.m in Sources */,
 				BCD75EBAB6EDA5208A144D5CFA3FC61A /* UIImage+NHExtension.m in Sources */,
 				09EA7CA5ABDFEF5E801E7E94CD0ABDA9 /* UIImageView+CornerRadius.m in Sources */,
 				0EC931E8A2AC8A9C96C508DF22705925 /* UIImageView+JWWebCache.m in Sources */,
+				805DABFE20F7480200612477 /* testFileViewController.m in Sources */,
 				1379470BC54FC694B3EC89CC95CECB53 /* UIImageView+NHExtension.m in Sources */,
 				3B5C59CFE9C93566655528C4CBB5427F /* UILabel+NHAttributeTextTapAction.m in Sources */,
 				3D519598D1527A617A234A3A9E64EC6C /* UILabel+VerticalAlignment.m in Sources */,

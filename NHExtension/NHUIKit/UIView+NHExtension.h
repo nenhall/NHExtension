@@ -9,7 +9,32 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface UIView (NHExtension)
+@interface UIView (NHConstantMethod)
+
+/**
+ 设置圆角
+ */
+void kNHViewBorderRadius(UIView *view, CGFloat radius, CGFloat width, UIColor *color);
+
+/** Find first responder in subviews */
+- (UIView *)findFirstResponder;
+
+/** 获取当前View的控制器对象 */
+- (UIViewController *)currentViewController;
+
+/** 从nib上加载view 保持nib名称与类名一致，否则重新实现此方法*/
++ (instancetype)loadViewFromNib;
+
+/** 加载cell，内部自动判空及创建 */
++ (instancetype)loadCellWithTableView:(UITableView *)tableView;
+
+
+
+@end
+
+
+
+@interface UIView (NHViewSize)
 
 /**
  * Shortcut for frame.origin.x.
@@ -102,9 +127,6 @@
  */
 @property (nonatomic) CGSize size;
 
-// Find first responder in subviews
-- (UIView *)findFirstResponder;
 
-/** 获取当前View的控制器对象 */
--(UIViewController *)currentViewController;
 @end
+

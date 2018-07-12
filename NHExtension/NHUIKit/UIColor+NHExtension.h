@@ -20,6 +20,26 @@
 #define  kColorWithPatternImageName(imageName) \
 [UIColor colorWithPatternImageName:imageName]
 
+/*****************************设置随机颜色******************************/
+#define kRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+
+/*****************************设置RGB颜色/设置RGBA颜色******************************/
+#define kRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:a]
+#define kBlackColor      [UIColor blackColor]
+#define kDarkGrayColor   [UIColor darkGrayColor]
+#define kLightGrayColor  [UIColor lightGrayColor]
+#define kWhiteColor      [UIColor whiteColor]
+#define kGrayColor       [UIColor grayColor]
+#define kRedColor        [UIColor redColor]
+#define kGreenColor      [UIColor greenColor]
+#define kBlueColor       [UIColor blueColor]
+#define kCyanColor       [UIColor cyanColor]
+#define kYellowColor     [UIColor yellowColor]
+#define kMagentaColor    [UIColor magentaColor]
+#define kOrangeColor     [UIColor orangeColor]
+#define kPurpleColor     [UIColor purpleColor]
+#define kBrownColor      [UIColor brownColor]
+#define kClearColor      [UIColor clearColor]
 
 @interface UIColor (NHExtension)
 

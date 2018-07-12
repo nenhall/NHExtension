@@ -30,9 +30,9 @@
 #import "UIView+MGBadgeView.h"
 #import "UIView+NHExtension.h"
 #import "UIViewController+Extension.h"
-
-//#import "UITableView+SDAutoTableViewCellHeight.h"
-//#import "UIScrollView+EmptyDataSet.h"
+#import "UIDevice+info.h"
+#import "NHMacroDefineHeader.h"
+#import "NHINLINE.h"
 
 
 #endif
@@ -43,6 +43,5 @@ FOUNDATION_EXPORT double NH_EXTENSIONVersionNumber;
 //! Project version string for NH_EXTENSION.
 FOUNDATION_EXPORT const unsigned char NH_EXTENSIONVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <NH_EXTENSION/PublicHeader.h>
 
 

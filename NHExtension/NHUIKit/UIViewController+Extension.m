@@ -29,7 +29,7 @@
 //        [tableView.header performSelectorOnMainThread:@selector(endRefreshing) withObject:tableView waitUntilDone:NO];
 //        [tableView.footer performSelectorOnMainThread:@selector(endRefreshing) withObject:tableView waitUntilDone:NO];
     }
-    
+
     if ([scrollView isKindOfClass:[UICollectionView class]]){
         UICollectionView *collectionView = (UICollectionView *)scrollView;
 //        [collectionView.header performSelectorOnMainThread:@selector(endRefreshing) withObject:collectionView waitUntilDone:NO];
