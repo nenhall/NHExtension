@@ -1,24 +1,24 @@
 //
-//  UIButton+ImageTitleStyle.m
+//  UIButton+NHLayout.m
 //  NHExtension
 //
 //  Created by neghao on 2017/7/18.
 //  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
-#import "UIButton+ImageTitleLayout.h"
+#import "UIButton+NHLayout.h"
 #include <objc/message.h>
 #import "NHMacroDefineHeader.h"
 #import "NH_INLINE.h"
 
-@interface UIView (ImageTitleLayout)
+@interface UIView (NHLayout)
 @property (nonatomic, copy) NSDictionary *layoutButtons;
 - (void)nh_ImageTitleLayout;
 - (void)addLayoutButton:(UIButton *)button;
 - (void)removeLayoutButton:(UIButton *)button;
 @end
 
-@implementation UIView (ImageTitleLayout)
+@implementation UIView (NHLayout)
 NH_SYNTHESIZE_CATEGORY_OBJ_PROPERTY(layoutButtons, setLayoutButtons:)
 
 - (void)addLayoutButton:(UIButton *)button {
@@ -65,7 +65,7 @@ NH_SYNTHESIZE_CATEGORY_OBJ_PROPERTY(layoutButtons, setLayoutButtons:)
 @property (nonatomic, assign) NHButtonLayoutStyle nh_layoutStyle;
 @end
 
-@implementation UIButton (ImageTitleLayout)
+@implementation UIButton (NHLayout)
 NH_SYNTHESIZE_CATEGORY_VALUE_PROPERTY(CGFloat, nh_padding, setNh_padding:)
 NH_SYNTHESIZE_CATEGORY_VALUE_PROPERTY(NHButtonLayoutStyle, nh_layoutStyle, setNh_layoutStyle:)
 NH_SYNTHESIZE_CATEGORY_VALUE_PROPERTY(BOOL, closeAutoLayoutStyleOnLayoutSubviews, setCloseAutoLayoutStyleOnLayoutSubviews:)

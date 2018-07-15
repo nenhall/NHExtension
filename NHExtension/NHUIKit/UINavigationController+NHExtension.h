@@ -1,5 +1,5 @@
 //
-//  UINavigationController+PushAnimation.h
+//  UINavigationController+NHExtension.h
 //  NHExtension
 //
 //  Created by neghao on 2017/8/1.
@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OJLNavAnimation : NSObject <UIViewControllerAnimatedTransitioning>
+@interface NHNavAnimation : NSObject <UIViewControllerAnimatedTransitioning>
 @property (nonatomic, strong) UIButton* centerButton;
 @end
 
 
-@interface UINavigationController (PushAnimation)
+@interface UINavigationController (NHPushAnimation)
 
 - (void)pushViewController:(UIViewController *)viewController withCenterButton:(UIButton*)button;
 

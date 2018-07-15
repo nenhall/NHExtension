@@ -57,3 +57,13 @@
 
 @end
 
+
+@interface UILabel (VerticalAlignment)
+
+/** 文字顶部对齐 */
+- (void)textAlignmentTop;
+
+/** 文字底部对齐 */
+- (void)textAlignmentBottom;
+@end
+

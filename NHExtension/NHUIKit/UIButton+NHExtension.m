@@ -6,7 +6,7 @@
 //  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
-#import "UIButton+repeatRate.h"
+#import "UIButton+NHExtension.h"
 #import <objc/runtime.h>
 #import "NH_INLINE.h"
 

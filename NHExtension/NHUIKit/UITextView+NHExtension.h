@@ -1,5 +1,5 @@
 //
-//  UITextView+placeholder.h
+//  UITextView+NHExtension.h
 //  NHExtension
 //
 //  Created by neghao on 2016/8/24.
@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextView (placeholder)
+@interface UITextView (NHPlaceholder)
 /** 注意先设置textView的字体 */
 @property (nonatomic,copy) NSString *placeholder;
 @end

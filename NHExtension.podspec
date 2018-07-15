@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "neghao_pro" => "neghao@126.com" }
 
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
 
   s.source       = { :git => "https://github.com/neghao/NHExtension.git", :tag => "#{s.version}" }
 
@@ -32,8 +32,8 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
- # s.dependency "DZNEmptyDataSet"
- # s.dependency 'SDAutoLayout', '~> 2.1.3'
+ s.dependency 'DZNEmptyDataSet'
+ s.dependency 'UIView+MGBadgeView'
 
 
 

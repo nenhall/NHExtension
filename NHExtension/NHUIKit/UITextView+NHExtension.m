@@ -1,5 +1,5 @@
 //
-//  UITextView+placeholder.m
+//  UITextView+NHExtension.m
 //  NHExtension
 //
 //  Created by neghao on 2016/8/24.
@@ -8,13 +8,13 @@
 
 /** 注意先设置textView的字体 */
 
-#import "UITextView+placeholder.h"
+#import "UITextView+NHExtension.h"
 #import <objc/runtime.h>
 
 #define LEFT_MARGIN 5
 #define TOP_MARGIN  8
 
-@implementation UITextView (placeholder)
+@implementation UITextView (NHPlaceholder)
 
 - (NSString *)placeholder{
      return self.label.text;

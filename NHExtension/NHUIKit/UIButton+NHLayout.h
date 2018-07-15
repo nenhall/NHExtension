@@ -1,5 +1,5 @@
 //
-//  UIButton+ImageTitleStyle.h
+//  UIButton+NHLayout.h
 //  NHExtension
 //
 //  Created by neghao on 2017/7/18.
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, NHButtonLayoutStyle) {
 
 #if !TARGET_INTERFACE_BUILDER
 
-@interface UIButton (ImageTitleLayout)
+@interface UIButton (NHLayout)
 /**
  自动更新图文布局，在父视图调用LayoutSubviews方法时 默认NO
  关闭此功能，且button是使用autoLayout布局，

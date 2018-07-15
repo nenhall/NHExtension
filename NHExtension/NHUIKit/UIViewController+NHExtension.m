@@ -1,15 +1,15 @@
 //
-//  UIViewController+Extension.m
+//  UIViewController+NHExtension.m
 //  NHExtension
 //
 //  Created by neghao on 2016/12/28.
 //  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
-#import "UIViewController+Extension.h"
+#import "UIViewController+NHExtension.h"
 
 
-@implementation UIViewController (Extension)
+@implementation UIViewController (NHExtension)
 
 - (void)backController {
     [self.view endEditing:YES];

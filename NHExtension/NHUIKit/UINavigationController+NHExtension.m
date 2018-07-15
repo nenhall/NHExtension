@@ -1,19 +1,19 @@
 //
-//  UINavigationController+PushAnimation.m
+//  UINavigationController+NHExtension.m
 //  NHExtension
 //
 //  Created by neghao on 2017/8/1.
 //  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
-#import "UINavigationController+PushAnimation.h"
+#import "UINavigationController+NHExtension.h"
 
 #import <objc/message.h>
 
-@interface OJLNavAnimation ()
+@interface NHNavAnimation ()
 @property (nonatomic, strong)id<UIViewControllerContextTransitioning> transitionContext;
 @end
-@implementation OJLNavAnimation
+@implementation NHNavAnimation
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext{
     return 0.5;
 }
@@ -54,7 +54,7 @@
 
 
 
-@implementation UINavigationController (PushAnimation)
+@implementation UINavigationController (NHPushAnimation)
 static char buttonKey;
 
 
@@ -77,7 +77,7 @@ static char buttonKey;
 
 #pragma mark UINavigationControllerDelegate
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC{
-    OJLNavAnimation* animation = [OJLNavAnimation new];
+    NHNavAnimation* animation = [NHNavAnimation new];
     animation.centerButton = self.centerButton;
     return animation;
 }

@@ -15,13 +15,11 @@
 #import "NSData+Cache.h"
 #import "NSDate+switchDate.h"
 #import "NSDictionary+NHJSON.h"
-#import "NSObject+getCurrentVC.h"
 #import "NSObject+Log.h"
 #import "NSObject+NHExtension.h"
 #import "NSObject+runtime.h"
 #import "NSString+NHExtension.h"
 #import "NSTimer+AutoRetain.h"
-
 
 #endif
 

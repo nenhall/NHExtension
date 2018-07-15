@@ -5,7 +5,7 @@
 //  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
-#import "UILabel+AttributeTextTapAction.h"
+#import "UILabel+NHExtension.h"
 #import <objc/runtime.h>
 #import <CoreText/CoreText.h>
 #import <Foundation/Foundation.h>
@@ -451,5 +451,34 @@
     }
     return string;
 }
+
+@end
+
+
+@implementation UILabel (VerticalAlignment)
+- (void)textAlignmentTop {
+    self.numberOfLines = 0;
+    CGSize fontSize = [self.text sizeWithAttributes:@{NSFontAttributeName:self.font}];
+    double finalWidth = self.frame.size.width;
+    CGSize maximumSize = CGSizeMake(finalWidth, CGFLOAT_MAX);
+    CGRect stringSize = [self.text boundingRectWithSize:maximumSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:self.font} context:nil];
+    int lines = (self.frame.size.height - stringSize.size.height) / fontSize.height;
+    for (int i = 0; i < lines; i++) {
+        self.text = [self.text stringByAppendingString:@"\n"];
+    }
+}
+
+- (void)textAlignmentBottom {
+    self.numberOfLines = 0;
+    CGSize fontSize = [self.text sizeWithAttributes:@{NSFontAttributeName:self.font}];
+    double finalWidth = self.frame.size.width;
+    CGSize maximumSize = CGSizeMake(finalWidth, CGFLOAT_MAX);
+    CGRect stringSize = [self.text boundingRectWithSize:maximumSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:self.font} context:nil];
+    int lines = (self.frame.size.height - stringSize.size.height) / fontSize.height;
+    for (int i = 0; i < lines; i++) {
+        self.text = [NSString stringWithFormat:@" \n%@",self.text];
+    }
+}
+
 
 @end

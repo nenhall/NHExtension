@@ -1,124 +1,206 @@
 //
-//  UIView+NHDisplayAnimation.m
+//  UIView+NHLayout.m
 //  NHExtension
 //
 //  Created by neghao on 17/1/4.
 //  Copyright © 2017年 neghao.studio. All rights reserved.
 //
 
-#import "UIView+NHDisplayAnimation.h"
+#import "UIView+NHLayout.h"
 
-@implementation UITableViewCell (NHDisplayAnimation)
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (void)doCellAnimationWithAnimationStyle:(UITableViewCellDisplayAnimationStyle)animationStyle
-{
-    __weak __typeof(&*self)weakSelf = self;
-    switch (animationStyle) {
-        case UITableViewCellDisplayAnimationStyleFade:
-        {
-            self.alpha = 0;
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.alpha = 1;
-            }];
-        }
-            break;
-        case UITableViewCellDisplayAnimationStyleScale:
-        {
-            self.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.layer.transform = CATransform3DMakeScale(1, 1, 1);
-            }];
-        }
-            break;
-        case UITableViewCellDisplayAnimationStylePosition:
-        {
-            self.transform = CGAffineTransformTranslate(self.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.transform = CGAffineTransformIdentity;
-            }];
-            
-        }
-            break;
-        case UITableViewCellDisplayAnimationStyleRotateX:
-        {
-            self.layer.transform = CATransform3DRotate(self.layer.transform, M_PI, 1, 0, 0);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.layer.transform = CATransform3DRotate(weakSelf.layer.transform, M_PI, 1, 0, 0);
-            }];
-            
-        }
-            break;
-        case UITableViewCellDisplayAnimationStyleRotateY:
-        {
-            self.layer.transform = CATransform3DRotate(self.layer.transform, M_PI, 0, 1, 0);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.layer.transform = CATransform3DRotate(weakSelf.layer.transform, M_PI, 0, 1, 0);
-            }];
-            
-        }
-            break;
-            
-        default:
-            break;
-    }
+@implementation UIView (NHLayout)
+
+- (CGFloat)left {
+    return self.frame.origin.x;
 }
 
-+ (void)doCellAnimationWithAnimationStyle:(UITableViewCellDisplayAnimationStyle)animationStyle onTheView:(UIView *)view{
-    [self doCellAnimationWithAnimationStyle:animationStyle onTheView:view];
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setLeft:(CGFloat)x {
+    CGRect frame = self.frame;
+    frame.origin.x = x;
+    self.frame = frame;
 }
 
-//cell显示动画
-- (void)doCellAnimationWithAnimationStyle:(UITableViewCellDisplayAnimationStyle)animationStyle onTheView:(UIView *)view
-{
-    __weak __typeof(&*self)weakSelf = self;
-    switch (animationStyle) {
-        case UITableViewCellDisplayAnimationStyleFade:
-        {
-            view.alpha = 0;
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.alpha = 1;
-            }];
-        }
-            break;
-        case UITableViewCellDisplayAnimationStyleScale:
-        {
-            view.layer.transform = CATransform3DMakeScale(0.2, 0.2, 1);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.layer.transform = CATransform3DMakeScale(1, 1, 1);
-            }];
-        }
-            break;
-        case UITableViewCellDisplayAnimationStylePosition:
-        {
-            view.transform = CGAffineTransformTranslate(view.transform, -[UIScreen mainScreen].bounds.size.width/2, 0);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.transform = CGAffineTransformIdentity;
-            }];
-            
-        }
-            break;
-        case UITableViewCellDisplayAnimationStyleRotateX:
-        {
-            view.layer.transform = CATransform3DRotate(view.layer.transform, M_PI, 1, 0, 0);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.layer.transform = CATransform3DRotate(weakSelf.layer.transform, M_PI, 1, 0, 0);
-            }];
-            
-        }
-            break;
-        case UITableViewCellDisplayAnimationStyleRotateY:
-        {
-            view.layer.transform = CATransform3DRotate(view.layer.transform, M_PI, 0, 1, 0);
-            [UIView animateWithDuration:0.5 animations:^{
-                weakSelf.layer.transform = CATransform3DRotate(weakSelf.layer.transform, M_PI, 0, 1, 0);
-            }];
-            
-        }
-            break;
-            
-        default:
-            break;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)top {
+    return self.frame.origin.y;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setTop:(CGFloat)y {
+    CGRect frame = self.frame;
+    frame.origin.y = y;
+    self.frame = frame;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)right {
+    return self.frame.origin.x + self.frame.size.width;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setRight:(CGFloat)right {
+    CGRect frame = self.frame;
+    frame.origin.x = right - frame.size.width;
+    self.frame = frame;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)bottom {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setBottom:(CGFloat)bottom {
+    CGRect frame = self.frame;
+    frame.origin.y = bottom - frame.size.height;
+    self.frame = frame;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)centerX {
+    return self.center.x;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setCenterX:(CGFloat)centerX {
+    self.center = CGPointMake(centerX, self.center.y);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)centerY {
+    return self.center.y;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setCenterY:(CGFloat)centerY {
+    self.center = CGPointMake(self.center.x, centerY);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)width {
+    return self.frame.size.width;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setWidth:(CGFloat)width {
+    CGRect frame = self.frame;
+    frame.size.width = width;
+    self.frame = frame;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)height {
+    return self.frame.size.height;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setHeight:(CGFloat)height {
+    CGRect frame = self.frame;
+    frame.size.height = height;
+    self.frame = frame;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)ttScreenX {
+    CGFloat x = 0.0f;
+    for (UIView* view = self; view; view = view.superview) {
+        x += view.left;
     }
+    return x;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)ttScreenY {
+    CGFloat y = 0.0f;
+    for (UIView* view = self; view; view = view.superview) {
+        y += view.top;
+    }
+    return y;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)screenViewX {
+    CGFloat x = 0.0f;
+    for (UIView* view = self; view; view = view.superview) {
+        x += view.left;
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView* scrollView = (UIScrollView*)view;
+            x -= scrollView.contentOffset.x;
+        }
+    }
+    
+    return x;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGFloat)screenViewY {
+    CGFloat y = 0;
+    for (UIView* view = self; view; view = view.superview) {
+        y += view.top;
+        
+        if ([view isKindOfClass:[UIScrollView class]]) {
+            UIScrollView* scrollView = (UIScrollView*)view;
+            y -= scrollView.contentOffset.y;
+        }
+    }
+    return y;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGRect)screenFrame {
+    return CGRectMake(self.screenViewX, self.screenViewY, self.width, self.height);
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGPoint)origin {
+    return self.frame.origin;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setOrigin:(CGPoint)origin {
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame = frame;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (CGSize)size {
+    return self.frame.size;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  UIViewController+Extension.h
+//  UIViewController+NHExtension.h
 //  NHExtension
 //
 //  Created by neghao on 2016/12/28.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (Extension)
+@interface UIViewController (NHExtension)
 
 /** 结束tableView的刷新 */
 - (void)endScrollViewRefresh:(__kindof UIScrollView *)scrollView;

@@ -1,16 +1,20 @@
 //
-//  NHINLINE.h
+//  NH_INLINE.h
 //  Pods
 //
 //  Created by nenhall_work on 2018/7/12.
 //
 
-#ifndef NHINLINE_h
-#define NHINLINE_h
+#ifndef NH_INLINE_h
+#define NH_INLINE_h
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/message.h>
+
+/** 这里只适合放简单的函数 */
+/** 这里只适合放简单的函数 */
+/** 这里只适合放简单的函数 */
 
 /** 主线程do */
 NS_INLINE void nh_safe_dispatch_main_q(dispatch_block_t block) {
@@ -41,6 +45,16 @@ NS_INLINE UIAlertView* NHTipWithTitleMessages(NSString *title, NSString *message
     return alerView;
 }
 
+/** 设置圆角 */
+NS_INLINE void kNHViewBorderRadius(UIView *view, CGFloat radius, CGFloat width, UIColor *color)
+{
+    [view.layer setCornerRadius:(radius)];
+    [view.layer setMasksToBounds:YES];
+    [view.layer setBorderWidth:(width)];
+    if (color) {
+        [view.layer setBorderColor:[color CGColor]];
+    }
+}
 
 /** 校正ScrollView在iOS11上的偏移问题 */
 NS_INLINE void NHAdjustsScrollViewInsetNever(UIViewController *viewController,__kindof UIScrollView *tableView) {
@@ -56,7 +70,7 @@ NS_INLINE void NHAdjustsScrollViewInsetNever(UIViewController *viewController,__
 }
 
 /** 判定一个对象是否为 NSNull */
-NS_INLINE BOOL ObjIsNSNullClass(id _Nonnull obj) {
+NS_INLINE BOOL kObjIsNSNullClass(id _Nonnull obj) {
     return [obj isKindOfClass:[NSNull class]];
 }
 
@@ -102,7 +116,7 @@ NS_INLINE NSString* kCachesDirectory() {
 }
 
 /** 合成路径 */
-NS_INLINE NSString* BKAppendingPathComponent(NSString* path, NSString*subPath){
+NS_INLINE NSString* kAppendingPathComponent(NSString* path, NSString*subPath){
     return [NSString stringWithFormat:@"%@/%@",(path),(subPath)];
 }
 
@@ -142,14 +156,16 @@ NS_INLINE NSString* kAppVersion() {
 
 /** app build版本 */
 NS_INLINE NSString* kAppBuildVersion() {
-return [kBundleDictionary() objectForKey:@"CFBundleVersion"];
+    return [kBundleDictionary() objectForKey:@"CFBundleVersion"];
 }
 
+/** 交换方法的实现 */
 NS_INLINE void NH_Method_swizzling(Class class, SEL originalSelector, SEL swizzledSelector) {
         Method originalMethod = class_getInstanceMethod(class, originalSelector);
         Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-        
-        if (class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
+        if (class_addMethod(class, originalSelector,
+                            method_getImplementation(swizzledMethod),
+                            method_getTypeEncoding(swizzledMethod))) {
             class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
         } else {
             method_exchangeImplementations(originalMethod, swizzledMethod);
@@ -158,4 +174,4 @@ NS_INLINE void NH_Method_swizzling(Class class, SEL originalSelector, SEL swizzl
 
 
 #endif
-#endif /* NHINLINE_h */
+#endif /* NH_INLINE_h */
