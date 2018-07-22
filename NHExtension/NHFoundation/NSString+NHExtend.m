@@ -1,60 +1,125 @@
 //
-//  NSString+NHExtension.m
+//  NSString+NHExtend.m
 //  NHExtension
 //
-//  Created by simope on 16/6/13.
-//  Copyright © 2016年 simope. All rights reserved.
+//  Created by neghao on 2018/7/21.
 //
 
-#import "NSString+NHExtension.h"
-#import <CommonCrypto/CommonCrypto.h>
+#import "NSString+NHExtend.h"
+#import "NSData+NHExtend.h"
+#import "NSObject+NHExtend.h"
 
+@implementation NSString (NHExtend)
+- (NSString *)stringByTrim
+{
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    return [self stringByTrimmingCharactersInSet:set];
+}
 
-@implementation NSString (NHExtension)
+- (NSRange)rangeTotal
+{
+    return NSMakeRange(0, self.length);
+}
 
+#pragma mark - URL
+- (NSString *)urlEncode
+{
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"-_.!*'();:@$,[]"]];
+}
 
-+ (NSAttributedString *)addAttachmentImageName:(NSString *)image width:(CGFloat)width height:(CGFloat)height{
-    NSTextAttachment *attch = [[NSTextAttachment alloc] init];
-    attch.image = [UIImage imageNamed:image];
-    attch.bounds = CGRectMake(0.f, 0.f, width, height);
-    return [NSAttributedString attributedStringWithAttachment:attch];
+- (NSString *)urlDecode
+{
+    return [self stringByRemovingPercentEncoding];
+}
+
+- (NSString *)urlAppendingKeyValue:(NSString *)keyValue
+{
+    NSString *separator = [self rangeOfString:@"?"].length == 0?@"?":@"&";
+    return [self stringByAppendingFormat:@"%@%@",separator,keyValue];
+}
+
+- (NSString *)md5String
+{
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] md5String];
+}
+
+- (NSString *)sha1String
+{
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] sha1String];
+}
+
+- (NSString *)hmacSHA1StringWithKey:(NSString *)key
+{
+    return [[self dataUsingEncoding:NSUTF8StringEncoding] hmacSHA1StringWithKey:key];
+}
+
+- (id)jsonObject
+{
+    return [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:nil];
+}
+
+- (BOOL)matchesRegx:(NSString *)regex options:(NSRegularExpressionOptions)options
+{
+    if (!regex.isNoEmpty) return NO;
+    
+    NSError *error;
+    NSRegularExpression *rx = [NSRegularExpression regularExpressionWithPattern:regex options:options error:&error];
+    if (error) return NO;
+    
+    NSRange range = [rx rangeOfFirstMatchInString:self options:0 range:NSMakeRange(0, self.length)];
+    return range.length != 0;
+}
+
+- (void)enumerateRegexMatches:(NSString *)regex options:(NSRegularExpressionOptions)options usingBlock:(void (^)(NSString * _Nonnull, NSRange, BOOL * _Nonnull))block
+{
+    NSRegularExpression *regExp = [NSRegularExpression regularExpressionWithPattern:regex options:options error:nil];
+    if (!regExp) return;
+    [regExp enumerateMatchesInString:self options:kNilOptions range:NSMakeRange(0, self.length) usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
+        block([self substringWithRange:result.range], result.range, stop);
+    }];
+}
+
+- (NSString *)stringByReplacingRegex:(NSString *)regex options:(NSRegularExpressionOptions)options withString:(NSString *)replacement
+{
+    NSRegularExpression *pattern = [NSRegularExpression regularExpressionWithPattern:regex options:options error:nil];
+    if (!pattern) return self;
+    return [pattern stringByReplacingMatchesInString:self options:0 range:NSMakeRange(0, [self length]) withTemplate:replacement];
+}
+
++ (NSString *)UUIDString
+{
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    CFStringRef string = CFUUIDCreateString(NULL, uuid);
+    CFRelease(uuid);
+    return (__bridge_transfer NSString *)string;
 }
 
 
-- (CGRect)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize{
-    NSDictionary *attrs = @{NSFontAttributeName : font};
-    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:attrs context:nil];
++ (BOOL)isEmptyOrNull:(NSString *)string {
+    if (![string isKindOfClass:[NSString class]]) return  YES;
+    return [self isEmptyOrNull:string];
 }
 
-- (NSString *)stringUpdataShowFormatWithNum:(int)num {
-    //140000
-    int number = num;
-    if (number > 9999) {
-        NSMutableString *concerStr = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%d",number]];
-        NSString *newStr = [concerStr substringWithRange:NSMakeRange(0, concerStr.length - 3)];
-        concerStr = [newStr mutableCopy];
-        
-        unichar laststr = [newStr characterAtIndex:newStr.length-1];
-        NSLog(@"%c",laststr);
-        if ([[NSString stringWithFormat:@"%c",laststr] intValue] == 0) {
-            newStr  = [concerStr substringWithRange:NSMakeRange(0, concerStr.length -1)];
-            concerStr = [newStr mutableCopy];
-        }else{
-            [concerStr insertString:@"." atIndex:concerStr.length - 1];
-        }
-        
-        [concerStr insertString:@"w" atIndex:concerStr.length];
-        return [concerStr copy];
-    }else{
-        return [NSString stringWithFormat:@"%d",number];
-    }
+- (BOOL)isEmptyOrNull:(NSString *)string {
+    if (string == nil) return  YES;
+    if (string == NULL) return  YES;
+    if ([string isKindOfClass:[NSNull class]]) return  YES;
+    
+    //为null string
+    if ([string isEqualToString:@"null"]) return YES;
+    if ([string isEqualToString:@"(null)"]) return YES;
+    
+    //全是空格
+    NSUInteger nh_lenght = [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length];
+    if (nh_lenght == 0) return  YES;
+ 
+    return NO;
 }
-
 
 /**
  *  判断是否含有表情
  */
-+ (BOOL)stringContainsEmoji:(NSString *)string{
+- (BOOL)stringContainsEmoji:(NSString *)string{
     __block BOOL returnValue = NO;
     
     if (!string) {
@@ -97,34 +162,6 @@
     return returnValue;
 }
 
-/**
- *  判定是否为有效的手机号
- */
-+ (BOOL)isMobile:(NSString*)mobile{
-    NSString *regex = @"^1+[34578]+\\d{9}";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    return [pred evaluateWithObject:mobile];
-}
-- (BOOL)isMobile{
-    NSString *regex = @"^1+[34578]+\\d{9}";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    return [pred evaluateWithObject:self];
-}
-
-/**
- *  简单判定是否为有效的身份证号
- */
-+ (BOOL)simpleVerifyIdentityCardNum:(NSString *)IDCard
-{
-    NSString *regex = @"^(\\\\d{14}|\\\\d{17})(\\\\d|[xX])$";
-    NSPredicate *pre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-    return [pre evaluateWithObject:IDCard];
-}
-
-
-/**
- *  精确的身份证号有效性检测
- */
 + (BOOL)accurateVerifyIDCardNumber:(NSString *)value {
     value = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
@@ -206,7 +243,7 @@
                 NSString *JYM2 =@"10x98765432";
                 M = [JYM substringWithRange:NSMakeRange(Y,1)];// 判断校验位
                 M2 = [JYM2 substringWithRange:NSMakeRange(Y,1)];
-
+                
                 NSString *LM = [value substringWithRange:NSMakeRange(17,1)];
                 if ([M isEqualToString:LM] || [LM isEqualToString:M2]) {
                     return YES;// 检测ID的校验位
@@ -215,43 +252,23 @@
                 }
                 
                 /**
-                //计算出校验码所在数组的位置
-                NSInteger idCardMod = S % 11;
-                //得到最后一位身份证号码
-                NSString *idCardLast= [value substringWithRange:NSMakeRange(17, 1)];
-                //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
-                if(idCardMod==2) {
-                    if(![idCardLast isEqualToString:@"X"]||[idCardLast isEqualToString:@"x"]) {
-                        return NO;
-                    }
-                }
-                */
+                 //计算出校验码所在数组的位置
+                 NSInteger idCardMod = S % 11;
+                 //得到最后一位身份证号码
+                 NSString *idCardLast= [value substringWithRange:NSMakeRange(17, 1)];
+                 //如果等于2，则说明校验码是10，身份证号码最后一位应该是X
+                 if(idCardMod==2) {
+                 if(![idCardLast isEqualToString:@"X"]||[idCardLast isEqualToString:@"x"]) {
+                 return NO;
+                 }
+                 }
+                 */
             }else {
                 return NO;
             }
         default:
             return NO;
     }
-}
-
-#pragma mark - 散列函数
-- (NSString *)md5String {
-    const char *cString = self.UTF8String;
-    unsigned char buffer[CC_MD5_DIGEST_LENGTH];
-    
-    CC_MD5(cString, (CC_LONG)strlen(cString), buffer);
-    
-    return [self stringFromBytes:buffer length:CC_MD5_DIGEST_LENGTH];
-}
-
-- (NSString *)stringFromBytes:(unsigned char *)bytes length:(int)length {
-    NSMutableString *strM = [NSMutableString string];
-    
-    for (int i = 0; i < length; i++) {
-        [strM appendFormat:@"%02x", bytes[i]];
-    }
-    
-    return [strM copy];
 }
 
 

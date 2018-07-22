@@ -56,6 +56,16 @@
     if (iOS_X_OR_LATER(11.0)) {
         kNSLog(@"iOSX_OR_LATER");
     }
+    
+    NSDate *date = [NSDate dataFromTimeStamp:1532244375];
+
+    
+    kNSLog(@"%@--year%@--%@",
+           date
+           ,[[NSDate date] formatDateWithSeparator:@"/" format:NHDateFormatYYYYMMddHHmm]
+           ,[NSDate timeDifferenceWithStarTime:1532246867 endTime:1532246988]
+           );
+
 }
 
 
