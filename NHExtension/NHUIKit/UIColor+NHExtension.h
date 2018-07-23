@@ -2,15 +2,15 @@
 //  UIColor+NHExtension.h
 //  NHExtension
 //
-//  Created by simope on 16/7/19.
-//  Copyright © 2016年 facebac. All rights reserved.
+//  Created by neghao on 2016/11/24.
+//  Copyright © 2016年 neghao.studio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 //颜色字符串返回一个颜色组
 #define  kHexColor(hex)        [UIColor colorWithHEX:hex]
-#define  kcallColor(hex)        [UIColor callColorFromHexRGB:hex]
+#define  kHexRGBColor(hex)     [UIColor callColorFromHexRGB:hex]
 
 //通过图片获取图片颜色
 #define  kColorWithPatternImage(image)    \
@@ -46,12 +46,20 @@
 + (UIColor *)colorWithHEX:(uint)color;
 + (NSArray*)colorForHex:(NSString *)hexColor;
 + (UIColor *)colorWithHexString:(NSString *)color;  //
+
+/**
+ 随机颜色
+ */
 + (UIColor *)randomColor;
+
+/** rgb转颜色 */
 + (UIColor *)flashColorWithRed:(uint)red green:(uint)green blue:(uint)blue alpha:(float)alpha;
+
+/** 通过图片名称，获得图片颜色 */
 + (UIColor *)colorWithPatternImageName:(NSString *)imageName;
 
-/*颜色:得到16#转rgb   增加*/
-+ (UIColor *) callColorFromHexRGB:(NSString *) inColorString;
+/** 颜色:得到16#转rgb */
++ (UIColor *)callColorFromHexRGB:(NSString *)inColorString;
 
 + (UIColor *)colorWithHexString:(NSString *)color Alpha:(CGFloat)alpha;
 
