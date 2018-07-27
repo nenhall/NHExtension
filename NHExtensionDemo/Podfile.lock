@@ -1,7 +1,7 @@
 PODS:
   - DZNEmptyDataSet (1.8.1)
   - Masonry (1.1.0)
-  - NHExtension (1.0.2):
+  - NHExtension (1.1.0):
     - DZNEmptyDataSet
     - "UIView+MGBadgeView"
   - "UIView+MGBadgeView (0.0.1)"
@@ -23,9 +23,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  NHExtension: 00c1c5730cbf02470687c4809f58b4666e10b42a
+  NHExtension: dd63c2e507e232ec7305b922967619c863c23d54
   "UIView+MGBadgeView": 49caf22454d35f042c798dc8ce27ca38fb6e7d2a
 
-PODFILE CHECKSUM: a64b28d1d5ee2c72e593ef1bdcf4d2ca0d34dcc7
+PODFILE CHECKSUM: 48f272718e7cb6008d1f413e80377cbf8f1f6948
 
 COCOAPODS: 1.5.0
