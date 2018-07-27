@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NHExtension"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "UIKit、Foundation的类扩展."
   s.description  = <<-DESC
   常用的UIKit、Foundation的类扩展
