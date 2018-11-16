@@ -9,5 +9,4 @@ target 'NHExtensionDemo' do
     # pod 'NHHUDExtend'
     #pod 'NHNavigationItem'
     pod 'Masonry'
-#    pod 'YYText'
 end

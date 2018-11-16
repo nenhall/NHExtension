@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NHExtension"
-  s.version      = "1.0.2"
+  s.version      = "1.1.1"
   s.summary      = "UIKit、Foundation的类扩展."
   s.description  = <<-DESC
   常用的UIKit、Foundation的类扩展
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
-  s.author       = { "neghao_pro" => "neghao@126.com" }
+  s.author       = { "neghao_pro" => "nenhall@126.com" }
 
   s.platform     = :ios, "8.0"
 
