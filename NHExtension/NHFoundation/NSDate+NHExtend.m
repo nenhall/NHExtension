@@ -7,6 +7,9 @@
 
 #import "NSDate+NHExtend.h"
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 #define CURRENT_CALENDAR [NSCalendar currentCalendar]
 
 
@@ -21,10 +24,10 @@
 - (NSInteger)minute{ return DATE_COMPONENT(NSCalendarUnitMinute, minute); }
 - (NSInteger)second{ return DATE_COMPONENT(NSCalendarUnitSecond, second); }
 - (NSInteger)nanosecond{ return DATE_COMPONENT(NSCalendarUnitNanosecond, nanosecond); }
-- (NSInteger)weekday{ return DATE_COMPONENT(NSCalendarUnitNanosecond, nanosecond);}
-- (NSInteger)weekdayOrdinal{ return DATE_COMPONENT(NSCalendarUnitNanosecond, nanosecond); }
-- (NSInteger)weekOfYear{ return DATE_COMPONENT(NSCalendarUnitNanosecond, nanosecond); }
-- (NSInteger)weekOfMonth{ return DATE_COMPONENT(NSCalendarUnitWeekOfMonth, weekOfMonth); }
+- (NSInteger)weekday{ return DATE_COMPONENT((NSWeekCalendarUnit | NSWeekdayCalendarUnit |NSWeekdayOrdinalCalendarUnit), weekday);}
+- (NSInteger)weekdayOrdinal{ return DATE_COMPONENT((NSWeekCalendarUnit | NSWeekdayCalendarUnit |NSWeekdayOrdinalCalendarUnit), weekdayOrdinal); }
+- (NSInteger)weekOfYear{ return DATE_COMPONENT(((NSWeekCalendarUnit | NSWeekdayCalendarUnit |NSWeekdayOrdinalCalendarUnit)), week); }
+- (NSInteger)weekOfMonth{ return DATE_COMPONENT((NSWeekCalendarUnit | NSWeekdayCalendarUnit |NSWeekdayOrdinalCalendarUnit), weekdayOrdinal); }
 - (NSInteger)yearForWeekOfYear{ return DATE_COMPONENT(NSCalendarUnitYearForWeekOfYear, yearForWeekOfYear);}
 - (NSInteger)quarter{ return DATE_COMPONENT(NSCalendarUnitQuarter, quarter); }
 - (BOOL)isLeapMonth{ return DATE_COMPONENT(NSCalendarUnitMonth, isLeapMonth); }
@@ -215,4 +218,61 @@ NSString *nh_convertFormat(NHDateFormat format, NSString *separator) {
     return str;
 }
 
+- (NSString *)getMonthBeginAndEnd {
+    double interval = 0;
+    NSDate *beginDate = nil;
+    NSDate *endDate = nil;
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setFirstWeekday:2];//设定周一为周首日
+    BOOL ok = [calendar rangeOfUnit:NSMonthCalendarUnit startDate:&beginDate interval:&interval forDate:self];
+    // 分别修改为 NSCalendarUnitDay NSCalendarUnitWeekOfYear NSCalendarUnitYear
+    if (ok) {
+        endDate = [beginDate dateByAddingTimeInterval:interval-1];
+    }else {
+        return nil;
+    }
+    NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
+    [myDateFormatter setDateFormat:@"yyyy.MM.dd"];
+    NSString *beginString = [myDateFormatter stringFromDate:beginDate];
+    NSString *endString = [myDateFormatter stringFromDate:endDate];
+    
+    NSString *s = [NSString stringWithFormat:@"%@-%@",beginString,endString];
+    return s;
+}
+
++ (NSArray *)backToPassedTimeWithWeeksNumber:(NSInteger)number
+{
+    NSDate *date = [[NSDate date] dateByAddingTimeInterval:- 7 * 24 * 3600 * number];
+    //滚动后，算出当前日期所在的周（周一－周日）
+    NSCalendar *gregorian = [NSCalendar currentCalendar];
+    NSDateComponents *comp = [gregorian components:NSCalendarUnitWeekday | NSCalendarUnitDay fromDate:date];
+    NSInteger daycount = [comp weekday] - 2;
+    
+    NSDate *weekdaybegin=[date dateByAddingTimeInterval:-daycount*60*60*24];
+    NSDate *weekdayend = [date dateByAddingTimeInterval:(6-daycount)*60*60*24];
+    
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:weekdaybegin];
+    NSDateComponents *components1 = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:weekdayend];
+    
+    NSDate *startDate = [calendar dateFromComponents:components];//这个不能改
+    
+    NSDate *startDate1 = [calendar dateFromComponents:components1];
+    NSDate *endDate1 = [calendar dateByAddingUnit:NSCalendarUnitDay value:1 toDate:startDate1 options:0];
+    
+    //获取今天0点到明天0点的时间
+    NSDateFormatter *formatter1 = [[NSDateFormatter alloc]init];
+    [formatter1 setDateFormat:@"yyyy-MM-dd"];
+    NSString *str1 = [formatter1 stringFromDate:startDate];
+    
+    NSDateFormatter *formatter2 = [[NSDateFormatter alloc]init];
+    [formatter2 setDateFormat:@"yyyy-MM-dd"];
+    NSString *str2 = [formatter2 stringFromDate:endDate1];
+    
+    NSArray *arr = @[str1,str2];
+    return arr;
+}
+
 @end
+#pragma clang diagnostic pop

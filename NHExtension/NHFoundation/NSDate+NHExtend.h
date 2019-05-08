@@ -158,4 +158,18 @@ typedef enum : NSUInteger {
 + (NSString *)timeDifferenceWithStarTime:(NSUInteger)starTime
                                  endTime:(NSUInteger)endTime;
 
+
+/**
+ 获取当前月的开始和结束时间
+ */
+- (NSString *)getMonthBeginAndEnd;
+
+
+/**
+ 获取当前周或者前n周的开始时间
+
+ @param number 获取多少个周
+ */
++ (NSArray *)backToPassedTimeWithWeeksNumber:(NSInteger)number;
+
 @end
