@@ -265,7 +265,7 @@ NH_SYNTHESIZE_CATEGORY_VALUE_PROPERTY(BOOL, closeAutoLayoutStyleOnLayoutSubviews
     }
 }
 
--(void)setImageTitleStyle:(NHButtonLayoutStyle)style padding:(CGFloat)padding
+-(void)nh_setImageTitleStyle:(NHButtonLayoutStyle)style padding:(CGFloat)padding
 {
     BOOL empty = (self.imageView.image != nil && self.titleLabel.text != nil);
     if (empty) {
@@ -273,10 +273,10 @@ NH_SYNTHESIZE_CATEGORY_VALUE_PROPERTY(BOOL, closeAutoLayoutStyleOnLayoutSubviews
         self.padding = padding;
         [self addToSuperview];
         if (!self.superview) {
-            kNSLog(@"self.superview为空，请添加到父视图设置图文排版");
+            NHLog(@"self.superview为空，请添加到父视图设置图文排版");
         }
     } else {
-        kNSLog(@"UIButton 图片或者标题为空，请添加图片和标题后再设置图文排版");
+        NHLog(@"UIButton 图片或者标题为空，请添加图片和标题后再设置图文排版");
     }
 }
 

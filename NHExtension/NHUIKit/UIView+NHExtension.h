@@ -38,22 +38,37 @@ IB_DESIGNABLE
 /** 加载cell，内部自动判空及创建 */
 + (instancetype)loadCellWithTableView:(UITableView *)tableView;
 
+/** 自定义标识 */
+@property (nonatomic, copy) NSString *identifier;
+
 @end
 
-
-typedef NS_ENUM(NSInteger, UITableViewCellDisplayAnimationStyle) {
-    UITableViewCellDisplayAnimationStyleFade,     //透明度变化
-    UITableViewCellDisplayAnimationStyleScale,    //缩放
-    UITableViewCellDisplayAnimationStylePosition, //位置变化
-    UITableViewCellDisplayAnimationStyleRotateX,  //x轴旋转
-    UITableViewCellDisplayAnimationStyleRotateY   //Y 轴旋转
+/** UITableviewVell/UICollectionViewIten Animation Style */
+typedef NS_ENUM(NSInteger, NHCellDisplayAnimationStyle) {
+    NHCellDisplayAnimationFade,     /**< 透明度变化 */
+    NHCellDisplayAnimationScale,    /**< 缩放 */
+    NHCellDisplayAnimationPosition, /**< 位置变化 */
+    NHCellDisplayAnimationRotateX,  /**< X 轴旋转 */
+    NHCellDisplayAnimationRotateY   /**< Y 轴旋转 */
 };
 
-@interface UITableViewCell (NHDisplayAnimation)
+@interface UIView (NHCellDisplayAnimation)
 
-- (void)doCellAnimationWithAnimationStyle:(UITableViewCellDisplayAnimationStyle)animationStyle;
 
-+ (void)doCellAnimationWithAnimationStyle:(UITableViewCellDisplayAnimationStyle)animationStyle onTheView:(UIView *)view;
+/**
+ 给cell 或者 item 添加显示动画
+ 
+ @param animationStyle 动画风格
+ */
+-(void)doCellAnimationWithAnimationStyle:(NHCellDisplayAnimationStyle)animationStyle;
+
+/**
+ 给cell 或者 item 添加显示动画
+
+ @param animationStyle 动画风格
+ @param view 对应的cell
+ */
++(void)doCellAnimationWithAnimationStyle:(NHCellDisplayAnimationStyle)animationStyle onTheView:(UIView *)view;
 
 @end
 

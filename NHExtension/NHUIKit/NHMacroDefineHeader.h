@@ -12,62 +12,62 @@
 /*********************************屏幕尺寸相关********************************/
 /******************************Screen Property******************************/
 #pragma mark - 屏幕尺寸相关
-#define kCurrentModeSize       [[UIScreen mainScreen] currentMode].size
-#define kScreenScale           [UIScreen mainScreen].scale
-#define kNativeScale           [[UIScreen mainScreen] nativeScale]
-#define kScreenBounds          [UIScreen mainScreen].bounds
-#define kScreenSize            kScreenBounds.size
-#define kScreenWidth           kScreenSize.width
-#define kScreenHeight          kScreenSize.height
+#define NHCurrentModeSize       [[UIScreen mainScreen] currentMode].size
+#define NHScreenScale           [UIScreen mainScreen].scale
+#define NHNativeScale           [[UIScreen mainScreen] nativeScale]
+#define NHScreenBounds          [UIScreen mainScreen].bounds
+#define NHScreenSize            NHScreenBounds.size
+#define NHScreenWidth           NHScreenSize.width
+#define NHScreenHeight          NHScreenSize.height
 /** 通过转屏通知得到的屏幕方向，有延迟，不可靠，建议使用此属性 */
-#define kInterfaceOrientation  [[UIApplication sharedApplication] statusBarOrientation]
-#define kStatusBarHeight       [[UIApplication sharedApplication] statusBarFrame].size.height
-#define kDelegateWindow        [UIApplication sharedApplication].delegate.window
-#define kTabBarHeight          ((kScreen5_85inch) ? 83.0 : 49.0)
-#define kNavBarHeight          44.0
-#define kNavgationHeight       (kStatusBarHeight + kNavBarHeight)
+#define NHInterfaceOrientation  [[UIApplication sharedApplication] statusBarOrientation]
+#define NHStatusBarHeight       [[UIApplication sharedApplication] statusBarFrame].size.height
+#define NHDelegateWindow        [UIApplication sharedApplication].delegate.window
+#define NHTabBarHeight          ((NHScreen5_85inch) ? 83.0 : 49.0)
+#define NHNavBarHeight          44.0
+#define NHNavgationHeight       (NHStatusBarHeight + NHNavBarHeight)
 
 /*********************************屏幕类型判定********************************/
 #pragma mark - 屏幕类型判定
-#define kRespondCurrentMode [UIScreen instancesRespondToSelector:@selector(currentMode)]
+#define NHRespondCurrentMode [UIScreen instancesRespondToSelector:@selector(currentMode)]
 /** 3.5inch屏幕 */
-#define kScreen3_5inch  (kRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(640, 960), kCurrentModeSize))
+#define NHScreen3_5inch  (NHRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(640, 960), NHCurrentModeSize))
 /** 4.0inch屏幕 */
-#define kScreen4_0inch  (kRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(640, 1136), kCurrentModeSize))
+#define NHScreen4_0inch  (NHRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(640, 1136), NHCurrentModeSize))
 /** 5.5inch屏幕 在放大模式下*/
-#define kScreen4_7inch_BM (kRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(1125, 2001), kCurrentModeSize))
+#define NHScreen4_7inch_BM (NHRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(1125, 2001), NHCurrentModeSize))
 /** 4.7inch屏幕 */
-#define kScreen4_7inch  (kRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(750, 1334), kCurrentModeSize))
-#define kScreen5_5inch  (kRespondCurrentMode && (CGSizeEqualToSize(CGSizeMake(1242, 2208), kCurrentModeSize)||CGSizeEqualToSize(CGSizeMake(1125, 2001), kCurrentModeSize)))
+#define NHScreen4_7inch  (NHRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(750, 1334), NHCurrentModeSize))
+#define NHScreen5_5inch  (NHRespondCurrentMode && (CGSizeEqualToSize(CGSizeMake(1242, 2208), NHCurrentModeSize)||CGSizeEqualToSize(CGSizeMake(1125, 2001), NHCurrentModeSize)))
 /** 5.85inch屏幕 -> iPhone_X */
-#define kScreen5_85inch (kRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(1125, 2436), kCurrentModeSize))
+#define NHScreen5_85inch (NHRespondCurrentMode && CGSizeEqualToSize(CGSizeMake(1125, 2436), NHCurrentModeSize))
 /** 放大显示模式 */
-#define kIsDisplayZoomed (((kScreenScale == 2)&&(kNativeScale == 2.343750)) || ((kScreenScale == 3)&&(kNativeScale == 2.880000)))
+#define NHIsDisplayZoomed (((NHScreenScale == 2)&&(NHNativeScale == 2.343750)) || ((NHScreenScale == 3)&&(NHNativeScale == 2.880000)))
 /** 以4.7inch屏幕计算尺寸比例 */
-#define kScaleBased4_7inch_W  ((kCurrentModeSize.width/kScreenScale)/375.0)
-#define kScaleBased4_7inch_H  ((kCurrentModeSize.height/kScreenScale)/667.0)
+#define NHScaleBased4_7inch_W  ((NHCurrentModeSize.width/NHScreenScale)/375.0)
+#define NHScaleBased4_7inch_H  ((NHCurrentModeSize.height/NHScreenScale)/667.0)
 
 //适配参数
-//#define kSuitParam (kIsDisplayZoomed ? (kScreen4_7inch ? 1.0 : (kScreen5_5inch ? 1.01 : 0.85)) : (kScreen5_5inch ? 1.12 : (kScreen4_7inch ? 1.0 : (kScreen5_85inch ? 1.0 : 0.85))))
+//#define NHSuitParam (NHIsDisplayZoomed ? (NHScreen4_7inch ? 1.0 : (NHScreen5_5inch ? 1.01 : 0.85)) : (NHScreen5_5inch ? 1.12 : (NHScreen4_7inch ? 1.0 : (NHScreen5_85inch ? 1.0 : 0.85))))
 
 /*************************iPhoneX设备上的相关间隙补偿**************************/
 #pragma mark - iPhoneX设备上的相关间隙补偿
 //iPhoneX相关属性
-#define kTabBarBottomPad          (kScreen5_85inch ? 34.0 : 0.0)
-#define kNavBarTopPad             (kScreen5_85inch ? 44.0 : 0.0)
-#define kStatusTopPad             (kScreen5_85inch ? 24.0 : 0.0)
-#define kLandscapeBottomPad       (kScreen5_85inch ? 21.0 : 0.0)
+#define NHTabBarBottomPad          (NHScreen5_85inch ? 34.0 : 0.0)
+#define NHNavBarTopPad             (NHScreen5_85inch ? 44.0 : 0.0)
+#define NHStatusTopPad             (NHScreen5_85inch ? 24.0 : 0.0)
+#define NHLandscapeBottomPad       (NHScreen5_85inch ? 21.0 : 0.0)
 /** iphoneX横屏时左或右的边缘间隙 */
-#define kIPhoneXLandscape_L_R_Pad (kScreen5_85inch ? 44.0 : 0.0)//72.5?16:9
+#define NHIPhoneXLandscape_L_R_Pad (NHScreen5_85inch ? 44.0 : 0.0)//72.5?16:9
 
 /*******************************设备类型判定******************************/
 #pragma mark - 设备类型判定
 //判断是否为iPhone
-#define kIPhoneDevice (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define NHIPhoneDevice (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 //判断是否为iPad
-#define kIPadDevice   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define NHIPadDevice   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 //判断是否为ipod
-#define kIPodDeveice  ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
+#define NHIPodDeveice  ([[[UIDevice currentDevice] model] isEqualToString:@"iPod touch"])
 
 /*******************************版本判定******************************/
 #pragma mark - 版本判定
@@ -77,24 +77,24 @@
 /*******************************自定义的 NSLog******************************/
 #pragma mark - 自定义的 NSLog
 #ifdef DEBUG
-#define kNSLog(fmt, ...) NSLog((@"%s " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#define NHLog(fmt, ...) NSLog((@"%s " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
 #else
-#define kNSLog(...)
+#define NHLog(...)
 #endif
 
 /*********************不需要打印时间戳等信息，使用如下宏定义***********************/
 #ifdef DEBUG
-#define kCNSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NHCLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 #else
-#define kCNSLog(...)
+#define NHCLog(...)
 #endif
 
 
 /**********************打印日志,当前行 并弹出一个警告**************************/
 #ifdef DEBUG
-#   define kALERTLog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
+#   define NHALERTLog(fmt, ...)  { UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"%s\n [Line %d] ", __PRETTY_FUNCTION__, __LINE__] message:[NSString stringWithFormat:fmt, ##__VA_ARGS__]  delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil]; [alert show]; }
 #else
-#   define kALERTLog(...)
+#   define NHALERTLog(...)
 #endif
 
 //#ifndef __OPTIMIZE__
@@ -104,8 +104,8 @@
 
 /***********************由角度转换弧度 由弧度转换角度**************************/
 #pragma mark - 由角度转换弧度 由弧度转换角度
-#define kDegreesToRadian(x) (M_PI * (x) / 180.0)
-#define kRadianToDegrees(radian) (radian * 180.0)/(M_PI)
+#define NHDegreesToRadian(x) (M_PI * (x) / 180.0)
+#define NHRadianToDegrees(radian) (radian * 180.0)/(M_PI)
 
 
 /****************************关联方法宏定义********************************/
@@ -131,12 +131,16 @@ NSValue *valueObj = [NSValue valueWithBytes:&value objCType:@encode(valueType)];
 objc_setAssociatedObject(self, @selector(propertyGetter), valueObj, OBJC_ASSOCIATION_RETAIN_NONATOMIC);\
 }
 
+/*****************************设置RGB颜色/设置RGBA颜色******************************/
+#define NHRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
+#define NHRGBAColor(r, g, b, a) [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:a]
+
 /*****************************其它常用宏定义******************************/
 #pragma mark - 其它常用宏定义
 /** 弱引用/强引用 */
-#define kWeakSelf(type)   __weak typeof(type) weak##type = type;
-#define kStrongSelf(type) __strong typeof(type) strong_##type = type;
-#define kGetImageWithName(imageName)     [UIImage imageNamed:@#imageName]
+#define NHWeakSelf(type)   __weak typeof(type) weak##type = type;
+#define NHStrongSelf(type) __strong typeof(type) strong_##type = type;
+#define NHGetImageWithName(imageName)     [UIImage imageNamed:@#imageName]
 
 
 #endif

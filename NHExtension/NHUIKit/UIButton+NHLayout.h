@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, NHButtonLayoutStyle) {
  @param style 排版风格
  @param padding title和image的间隙
  */
--(void)setImageTitleStyle:(NHButtonLayoutStyle)style padding:(CGFloat)padding;
+-(void)nh_setImageTitleStyle:(NHButtonLayoutStyle)style padding:(CGFloat)padding;
 
 @end
 

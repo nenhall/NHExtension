@@ -12,8 +12,8 @@
 
 - (void)setFitSafeAereLayout:(BOOL)fitSafeAereLayout {
     if (fitSafeAereLayout) {
-        if (kScreen5_85inch) {
-            CGFloat constant = self.constant + kIPhoneXLandscape_L_R_Pad;
+        if (NHScreen5_85inch) {
+            CGFloat constant = self.constant + NHIPhoneXLandscape_L_R_Pad;
             self.constant = constant;
         }
     }
@@ -24,7 +24,7 @@
 }
 
 - (void)setScaleBased47inchH:(CGFloat)scaleBased47inchH {
-    CGFloat constant = scaleBased47inchH - (scaleBased47inchH * kScaleBased4_7inch_W);
+    CGFloat constant = scaleBased47inchH - (scaleBased47inchH * NHScaleBased4_7inch_W);
     self.constant = constant;
 }
 
@@ -34,7 +34,7 @@
 
 - (void)setScaleBased47inchW:(CGFloat)scaleBased47inchW {
     
-    CGFloat constant = scaleBased47inchW - (scaleBased47inchW * kScaleBased4_7inch_W);
+    CGFloat constant = scaleBased47inchW - (scaleBased47inchW * NHScaleBased4_7inch_W);
     self.constant = constant;
 }
 

@@ -22,6 +22,8 @@
 #import "UIScrollView+EmptyDataSet.h"
 #endif
 
+#import "NH_INLINE.h"
+#import "NHMacroDefineHeader.h"
 #import "UIButton+NHLayout.h"
 #import "UIButton+NHExtension.h"
 #import "UIColor+NHExtension.h"
@@ -34,9 +36,6 @@
 #import "UIView+NHExtension.h"
 #import "UIViewController+NHExtension.h"
 #import "UIDevice+NHExtension.h"
-#import "NHMacroDefineHeader.h"
-#import "NH_INLINE.h"
-
 
 #endif
 
