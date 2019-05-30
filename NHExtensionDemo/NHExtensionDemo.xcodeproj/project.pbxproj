@@ -149,7 +149,6 @@
 				TargetAttributes = {
 					0AF782AE1F768D62006D8F4B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 69U78V53ZN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -159,6 +158,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -336,7 +336,7 @@
 			baseConfigurationReference = D670CEFBB405F5A3C98C1766 /* Pods-NHExtensionDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 69U78V53ZN;
+				DEVELOPMENT_TEAM = PE9T4WTY22;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NHPrefixHeader.pch";
 				INFOPLIST_FILE = NHExtensionDemo/Info.plist;
@@ -353,7 +353,7 @@
 			baseConfigurationReference = BC1419700E3CFBB130B621C6 /* Pods-NHExtensionDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 69U78V53ZN;
+				DEVELOPMENT_TEAM = PE9T4WTY22;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/NHPrefixHeader.pch";
 				INFOPLIST_FILE = NHExtensionDemo/Info.plist;
